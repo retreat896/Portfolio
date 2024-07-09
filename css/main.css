@@ -1,0 +1,44 @@
+.bi {
+    width: 1em;
+    height: 1em;
+    vertical-align: -.125em;
+    fill: currentcolor;
+}
+
+.me-2 {
+    margin-right: .5rem !important;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+}
+
+.gameCover{
+    width: 150px;
+    height: 200px;
+}
+
+.flexDown{
+    display: flex;
+    flex-direction: column;
+}
+
+.flexRight{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.center{
+    align-items: center;
+    justify-content: center;
+}
+
+.borderOutline{
+    border: 1px solid black !important;
+}
+.borderUnderline{
+    border-bottom: 1px solid rgb(73, 80, 87) !important;
+}
