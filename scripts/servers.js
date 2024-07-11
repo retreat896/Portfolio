@@ -40,7 +40,7 @@ const ajaxSettings = {
                       <tbody class="flexRight">
                         <tr class="flexDown">
                           <td>${serverData.name || serverName}</td>
-                          <td>${serverData.query.host}</td>
+                          <td>${serverData.query.connect}</td>
                           <td>${serverData.players.length}/${serverData.maxplayers}</td>
                           <td>${serverData.ping}</td>
                         </tr>
