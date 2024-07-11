@@ -97,6 +97,11 @@ const ajaxSettings = {
   }
   
   $(document).ready(function () {
-     getServerStatus();
+     getServerStatus().then(() => {
+         $('.placeholder-wave').removeClass('placeholder-wave');
+         $('.placeholder-glow').removeClass('placeholder-glow');
+         $('.placeholder').removeClass('placeholder');
+         $("#loadingCard").remove();
+     });
   })
   
