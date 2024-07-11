@@ -13,6 +13,9 @@ const ajaxSettings = {
     $.ajax(ajaxSettings).done(function (response) {
         for (let server in response) {
           if (response[server].error) {
+            let serverData = response[server];
+            let serverName = server; // Use the server key as the name
+            let serverCover = './images/' + serverName.toLowerCase() + '.jpg';
             let example = `
               <div class="card mb-3">
                 <div class="card-body flexRight">
