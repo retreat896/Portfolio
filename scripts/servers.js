@@ -35,14 +35,17 @@ const ajaxSettings = {
                           <th class="borderUnderline" scope="col">IP Address:</th>
                           <th class="borderUnderline" scope="col">Players:</th>
                           <th class="borderUnderline" scope="col">Ping:</th>
+                          <th class="borderUnderline" scope="col">Version:</th>
                         </tr>
                       </thead>
                       <tbody class="flexRight">
                         <tr class="flexDown">
-                          <td>${serverData.name || serverName}</td>
-                          <td>${serverData.connect}</td>
-                          <td>${serverData.numplayers}/${serverData.maxplayers}</td>
-                          <td>${serverData.ping}</td>
+                          <td>${serverData.name || serverName||"null"}</td>
+                          <td>${serverData.connect||"null"}</td>
+                          <td>${serverData.numplayers||"null"}/${serverData.maxplayers||"null"}</td>
+                          <td>${serverData.ping||"null"}</td>
+                          <td>${serverData.version||"null"}</td>
+
                         </tr>
                       </tbody>
                     </table>
