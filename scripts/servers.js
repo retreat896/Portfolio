@@ -20,7 +20,7 @@ const ajaxSettings = {
               <div class="card mb-3">
                 <div class="card-body flexRight">
                   <div class="flexDown center">
-                    ${serverName}
+                    ${serverName.slice(0, 1).toUpperCase() + serverName.slice(1)}
                     <img class="gameCover" alt="${serverName}" title="${serverName}" src="${serverCover}">
                   </div>
                   <div class="table-responsive">
@@ -36,11 +36,11 @@ const ajaxSettings = {
                       </thead>
                       <tbody class="flexRight">
                         <tr class="flexDown">
-                          <td>${serverName||"null"}</td>
+                          <td>${serverName.slice(0, 1).toUpperCase() + serverName.slice(1)||"null"}</td>
                           <td>null</td>
                           <td>0/0</td>
-                          <td>${response[server].message}</td>
-                          <td>${response[server].error}</td>
+                          <td>${response[server].message.slice(0, 1).toUpperCase() + response[server].message.slice(1)}</td>
+                          <td>${response[server].error.slice(0, 1).toUpperCase() + response[server].error.slice(1)}</td>
 
                         </tr>
                       </tbody>
@@ -61,7 +61,7 @@ const ajaxSettings = {
               <div class="card mb-3">
                 <div class="card-body flexRight">
                   <div class="flexDown center">
-                    ${serverName}
+                    ${serverName.slice(0, 1).toUpperCase() + serverName.slice(1)}
                     <img class="gameCover" alt="${serverName}" title="${serverName}" src="${serverCover}">
                   </div>
                   <div class="table-responsive">
@@ -77,7 +77,7 @@ const ajaxSettings = {
                       </thead>
                       <tbody class="flexRight">
                         <tr class="flexDown">
-                          <td>${serverData.name || serverName||"null"}</td>
+                          <td>${(serverData.name).slice(0, 1).toUpperCase() + serverData.name.slice(1) || serverName.slice(0, 1).toUpperCase() + serverName.slice(1)||"null"}</td>
                           <td>${serverData.connect||"null"}</td>
                           <td>${serverData.numplayers||"null"}/${serverData.maxplayers||"null"}</td>
                           <td>${serverData.ping||"null"}</td>
