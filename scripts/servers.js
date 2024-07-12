@@ -1,7 +1,7 @@
 const ajaxSettings = {
     "async": true,
     "crossDomain": true,
-    "url": "https://presently-immense-sculpin.ngrok-free.app/servers",
+    "url": "https://api.retreat896.com/servers",
     "method": "GET",
     "headers": {
       "Content-Type": "application/json",
