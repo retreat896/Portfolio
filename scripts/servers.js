@@ -93,7 +93,7 @@ const ajaxSettings = {
                 </div>
               </div>`;
             
-            $("#serverCards").append(example);
+            $("#serverCards").prepend(example);
           }
         }
         $('.placeholder-wave').removeClass('placeholder-wave');
