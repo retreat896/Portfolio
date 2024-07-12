@@ -93,15 +93,14 @@ const ajaxSettings = {
             $("#serverCards").append(example);
           }
         }
+        $('.placeholder-wave').removeClass('placeholder-wave');
+         $('.placeholder-glow').removeClass('placeholder-glow');
+         $('.placeholder').removeClass('placeholder');
+         $("#loadingCard").remove();
       });
   }
   
   $(document).ready(function () {
-     getServerStatus().then(() => {
-         $('.placeholder-wave').removeClass('placeholder-wave');
-         $('.placeholder-glow').removeClass('placeholder-glow');
-         $('.placeholder').removeClass('placeholder');
-         $("#loadingCard").remove();
-     });
+     getServerStatus()
   })
   
