@@ -82,7 +82,6 @@ const ajaxSettings = {
                           <td>${serverData.numplayers||"null"}/${serverData.maxplayers||"null"}</td>
                           <td>${serverData.ping||"null"}</td>
                           <td>${serverData.version||"null"}</td>
-
                         </tr>
                       </tbody>
                     </table>
