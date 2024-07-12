@@ -27,6 +27,7 @@ const ajaxSettings = {
                     <table class="table table-hover flexRight" summary="${serverName} Server">
                       <thead>
                         <tr class="flexDown">
+                          <th class="borderUnderline" scope="col">Status:</th>
                           <th class="borderUnderline" scope="col">Server Name:</th>
                           <th class="borderUnderline" scope="col">IP Address:</th>
                           <th class="borderUnderline" scope="col">Players:</th>
@@ -36,6 +37,7 @@ const ajaxSettings = {
                       </thead>
                       <tbody class="flexRight">
                         <tr class="flexDown">
+                          <td class="bg-danger">Offline</td>
                           <td>${serverName.slice(0, 1).toUpperCase() + serverName.slice(1)||"null"}</td>
                           <td>null</td>
                           <td>0/0</td>
@@ -68,6 +70,7 @@ const ajaxSettings = {
                     <table class="table table-hover flexRight" summary="${serverName} Server">
                       <thead>
                         <tr class="flexDown">
+                        <th class="borderUnderline" scope="col">Status:</th>
                           <th class="borderUnderline" scope="col">Server Name:</th>
                           <th class="borderUnderline" scope="col">IP Address:</th>
                           <th class="borderUnderline" scope="col">Players:</th>
@@ -77,6 +80,7 @@ const ajaxSettings = {
                       </thead>
                       <tbody class="flexRight">
                         <tr class="flexDown">
+                          <td class="bg-success">Online</td>
                           <td>${(serverData.name).slice(0, 1).toUpperCase() + serverData.name.slice(1) || serverName.slice(0, 1).toUpperCase() + serverName.slice(1)||"null"}</td>
                           <td>${serverData.connect||"null"}</td>
                           <td>${serverData.numplayers||"null"}/${serverData.maxplayers||"null"}</td>
