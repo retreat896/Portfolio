@@ -23,8 +23,8 @@ function getServerStatus() {
         ${serverName.slice(0, 1).toUpperCase() + serverName.slice(1)}
         <img class="gameCover" alt="${serverName}" title="${serverName}" src="${serverCover}">
       </div>
-      <div class="table-responsive serverInfoContainer">
-        <table class="table table-hover flexRight" summary="${serverName} Server">
+      <div class=" serverInfoContainer">
+        <table class="table table-hover " summary="${serverName} Server">
           <tbody>
             <tr>
               <th class="borderUnderline bg-danger rounded-start" scope="row">Status:</th>
@@ -71,8 +71,8 @@ function getServerStatus() {
         ${serverName.slice(0, 1).toUpperCase() + serverName.slice(1)}
         <img class="gameCover" alt="${serverName}" title="${serverName}" src="${serverCover}">
       </div>
-      <div class="table-responsive serverInfoContainer">
-        <table class="table table-hover flexRight" summary="${serverName} Server">
+      <div class=" serverInfoContainer">
+        <table class="table table-hover " summary="${serverName} Server">
           <tbody>
             <tr>
               <th class="borderUnderline bg-success rounded-start" scope="row">Status:</th>
