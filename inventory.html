@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Simple Grocy</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+    <meta name="description" content="Simplified Grocy List">
+    <meta name="author" content="Kristopher Adams">
+    <meta name="generator" content="Custom Html Frontend for Grocy">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"
+    integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+    <link rel="canonical" href="https://retreat896.com/">
+
+</head>
+
+<body>
+    <script>
+        function renderTable(data) {
+            let tableBody = $("#product-table-body");
+            tableBody.empty();
+
+            for (let item of data) {
+                let product = item.product;
+                let id = product.id;
+                let name = product.name;
+                let quantity = item.amount;
+                let dateAdded = product.row_created_timestamp;
+
+                let rowHTML = `
+                    <tr id="item-${id}">
+                        <td>${id}</td>
+                        <td>${name}</td>
+                        <td>
+                            <button class="btn btn-sm btn-secondary decrease-qty" data-id="${id}">-</button>
+                            <span class="mx-2 quantity" id="quantity-${id}">${quantity}</span>
+                            <button class="btn btn-sm btn-secondary increase-qty" data-id="${id}">+</button>
+                        </td>
+                        <td>${dateAdded}</td>
+                    </tr>
+                `;
+                tableBody.append(rowHTML);
+            }
+        }
+        $(document).on('click', '.increase-qty', function () {
+            let id = $(this).data('id');
+            let quantitySpan = $(`#quantity-${id}`);
+            let currentQty = parseInt(quantitySpan.text());
+            quantitySpan.text(currentQty + 1);
+        });
+
+        $(document).on('click', '.decrease-qty', function () {
+            let id = $(this).data('id');
+            let quantitySpan = $(`#quantity-${id}`);
+            let currentQty = parseInt(quantitySpan.text());
+            if (currentQty > 0) {
+                quantitySpan.text(currentQty - 1);
+            }
+        });
+        document.addEventListener('DOMContentLoaded', function () {
+
+            $.ajax({
+                "async": true,
+                "crossDomain": true,
+                "url": "http://grocey.retreat896.com/api/stock",
+                "method": "GET",
+                "headers": {
+                    "Content-Type": "application/json",
+                    
+                    "GROCY-API-KEY": "P7s2RvCN0EXFvdQvmOt8LcNqIx0DvGWSTh61bN8pRHjvocDoJf"
+                }
+            })
+                .done(function (data) {
+                    console.log(data);
+                    renderTable(data);
+                })
+
+        })
+    </script>
+    <h1>Grocy</h1>
+    <div id="app">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Quantity</th>
+                    <th>Date Added</th>
+                </tr>
+            </thead>
+            <tbody id="product-table-body">
+            </tbody>
+        </table>
+
+    </div>
+   </body>
+
+</html>
