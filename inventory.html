@@ -13,13 +13,13 @@
     <meta name="author" content="Kristopher Adams">
     <meta name="generator" content="Custom Html Frontend for Grocy">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-    crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
-    crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"
-    integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 
     <link rel="canonical" href="https://retreat896.com/">
 
@@ -27,68 +27,199 @@
 
 <body>
     <script>
+        function mergeData(products, stock) {
+    // Create a map to store the merged data
+    const productMap = new Map();
+
+    // Iterate over the stock items
+    stock.forEach(stockItem => {
+        const product = products.find(product => product.id === stockItem.product_id);
+        
+        if (product) {
+            // If the product already exists in the map, update the amount
+            if (productMap.has(stockItem.product_id)) {
+                const existingProduct = productMap.get(stockItem.product_id);
+                existingProduct.amount += stockItem.amount;
+            } else {
+                // If the product does not exist in the map, add it
+                productMap.set(stockItem.product_id, {
+                    id: stockItem.product_id,
+                    name: product.name,
+                    amount: stockItem.amount,
+                    row_created_timestamp: product.row_created_timestamp
+                });
+            }
+        }
+    });
+
+    // Convert the map values to an array and return it
+    return Array.from(productMap.values());
+}
         function renderTable(data) {
             let tableBody = $("#product-table-body");
             tableBody.empty();
 
             for (let item of data) {
-                let product = item.product;
-                let id = product.id;
-                let name = product.name;
+                let id = item.id;
+                let name = item.name;
                 let quantity = item.amount;
-                let dateAdded = product.row_created_timestamp;
+                let dateAdded = item.row_created_timestamp;
 
                 let rowHTML = `
-                    <tr id="item-${id}">
-                        <td>${id}</td>
-                        <td>${name}</td>
-                        <td>
-                            <button class="btn btn-sm btn-secondary decrease-qty" data-id="${id}">-</button>
-                            <span class="mx-2 quantity" id="quantity-${id}">${quantity}</span>
-                            <button class="btn btn-sm btn-secondary increase-qty" data-id="${id}">+</button>
-                        </td>
-                        <td>${dateAdded}</td>
-                    </tr>
-                `;
+            <tr id="item-${id}">
+                <td>${id}</td>
+                <td>${name}</td>
+                <td>
+                    <button class="btn btn-sm btn-secondary decrease-qty" data-id="${id}">-</button>
+                    <span class="mx-2 quantity" id="quantity-${id}">${quantity}</span>
+                    <button class="btn btn-sm btn-secondary increase-qty" data-id="${id}">+</button>
+                    <button disabled class="btn btn-sm btn-danger reset-qty" data-id="${id}">Reset</button>
+                </td>
+                <td>${dateAdded}</td>
+            </tr>
+        `;
                 tableBody.append(rowHTML);
             }
         }
-        $(document).on('click', '.increase-qty', function () {
-            let id = $(this).data('id');
-            let quantitySpan = $(`#quantity-${id}`);
-            let currentQty = parseInt(quantitySpan.text());
-            quantitySpan.text(currentQty + 1);
-        });
+        function highlightRow(id) {
+            $(`#item-${id}`).addClass('bg-warning');
+        }
+        function initializeOnClick() {
+            $(document).on('click', '.increase-qty', function () {
+    let id = $(this).data('id');
+    let quantitySpan = $(`#quantity-${id}`);
+    let currentQty = parseInt(quantitySpan.text());
 
-        $(document).on('click', '.decrease-qty', function () {
-            let id = $(this).data('id');
-            let quantitySpan = $(`#quantity-${id}`);
-            let currentQty = parseInt(quantitySpan.text());
-            if (currentQty > 0) {
-                quantitySpan.text(currentQty - 1);
-            }
-        });
+    // Store the old value using jQuery.data() if not already stored
+    if (quantitySpan.data('originalQty') === undefined) {
+        quantitySpan.data('originalQty', currentQty);
+    }
+
+    // Check if the current quantity is less than the max (100)
+    if (currentQty < 100) {
+        quantitySpan.text(currentQty + 1);
+        highlightRow(id);
+    }
+
+    // Check if current quantity differs from the original
+    if (quantitySpan.text() != quantitySpan.data('originalQty')) {
+        $(`#item-${id} .reset-qty`).prop('disabled', false);
+    } else {
+        $(`#item-${id} .reset-qty`).prop('disabled', true);
+        $(`#item-${id}`).removeClass('bg-warning');
+    }
+});
+
+$(document).on('click', '.decrease-qty', function () {
+    let id = $(this).data('id');
+    let quantitySpan = $(`#quantity-${id}`);
+    let currentQty = parseInt(quantitySpan.text());
+
+    // Store the old value using jQuery.data() if not already stored
+    if (quantitySpan.data('originalQty') === undefined) {
+        quantitySpan.data('originalQty', currentQty);
+    }
+
+    // Check if the current quantity is greater than the min (0)
+    if (currentQty > 0) {
+        quantitySpan.text(currentQty - 1);
+        highlightRow(id);
+    }
+
+    // Check if current quantity differs from the original
+    if (quantitySpan.text() != quantitySpan.data('originalQty')) {
+        $(`#item-${id} .reset-qty`).prop('disabled', false);
+    } else {
+        $(`#item-${id} .reset-qty`).prop('disabled', true);
+        $(`#item-${id}`).removeClass('bg-warning');
+    }
+});
+
+
+            $(document).on('click', '.reset-qty', function () {
+                let id = $(this).data('id');
+                let quantitySpan = $(`#quantity-${id}`);
+                let originalQty = quantitySpan.data('originalQty');
+
+                quantitySpan.text(originalQty);
+                highlightRow(id);
+
+                // Disable the reset button and un-highlight the row
+                $(`#item-${id} .reset-qty`).prop('disabled', true);
+                $(`#item-${id}`).removeClass('bg-warning');
+            });
+
+            $(document).on('click', '#saveAll', function () {
+
+
+
+                let changed_items = $('#product-table-body .bg-warning');
+
+                for (let item of changed_items) {
+                    let id = Number($(item).find('.decrease-qty').data('id'));
+                    console.log(id)
+                    let qty = Number($(item).find('.quantity').text()) - $(item).find('.quantity').data('originalQty');
+                    $.ajax({
+                        "async": true,
+                        "crossDomain": true,
+                        "url": `https://grocey.retreat896.com/api/stock/products/${id}/add?=`,
+                        "method": "POST",
+                        "headers": {
+                            "Content-Type": "application/json",
+                            "GROCY-API-KEY": "P7s2RvCN0EXFvdQvmOt8LcNqIx0DvGWSTh61bN8pRHjvocDoJf"
+                        },
+                        "processData": false,
+                        "data": `{
+                          "amount": ${qty},  
+                          "transaction_type": "purchase"
+                        }`
+                    }).done(function (response) {
+                        console.log(response);
+                        $("#product-table-body .bg-warning").removeClass('bg-warning');
+                        $("#product-table-body .reset-qty").prop('disabled', true);
+                        $(item).find('.quantity').data('originalQty', Number($(item).find('.quantity').text()))
+                    })
+                        .fail(function (response) {
+                            console.log(response);
+                        });
+                }
+            });
+
+        }
         document.addEventListener('DOMContentLoaded', function () {
-
+            //get stock data
             $.ajax({
                 "async": true,
                 "crossDomain": true,
-                "url": "https://grocey.retreat896.com/api/stock",
+                "url": "https://grocey.retreat896.com/api/objects/stock",
                 "method": "GET",
                 "headers": {
                     "Content-Type": "application/json",
-                    
+
                     "GROCY-API-KEY": "P7s2RvCN0EXFvdQvmOt8LcNqIx0DvGWSTh61bN8pRHjvocDoJf"
                 }
             })
-                .done(function (data) {
-                    console.log(data);
-                    renderTable(data);
+                .done(function (stockData) {
+                    $.ajax({
+                        "async": true,
+                        "crossDomain": true,
+                        "url": "https://grocey.retreat896.com/api/objects/products",
+                        "method": "GET",
+                        "headers": {
+                            "Content-Type": "application/json",
+
+                            "GROCY-API-KEY": "P7s2RvCN0EXFvdQvmOt8LcNqIx0DvGWSTh61bN8pRHjvocDoJf"
+                        }
+                    }).done(function (productData) {
+                        let mergedData = mergeData(productData, stockData);
+                        renderTable(mergedData);
+                    })
                 })
+            initializeOnClick()
 
         })
     </script>
-    <h1>Grocy</h1>
+    <h1>Inventory</h1><span><button class="btn btn-success" id="saveAll">Save</button></button></span>
     <div id="app">
         <table class="table table-bordered">
             <thead>
@@ -104,6 +235,6 @@
         </table>
 
     </div>
-   </body>
+</body>
 
 </html>
