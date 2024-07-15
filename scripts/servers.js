@@ -88,7 +88,7 @@ function getServerStatus() {
             </tr>
             <tr>
               <th class="borderUnderline" scope="row">Players:</th>
-              <td>${serverData.numplayers || "null"}/${serverData.maxplayers || "null"}</td>
+              <td>${serverData.numplayers}/${serverData.maxplayers || "null"}</td>
             </tr>
             <tr>
               <th class="borderUnderline" scope="row">Ping:</th>
@@ -103,7 +103,7 @@ function getServerStatus() {
       </div>
     </div>
   </div>`;
-
+        console.log(serverData.numplayers);
         $("#serverCards").prepend(example);
       }
     }
