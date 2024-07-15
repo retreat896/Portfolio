@@ -4,3 +4,19 @@
     filter: invert(1);
     margin-right: 10px;
 }
+
+.gameCoverContainer{
+    width: 20%;
+}
+.serverInfoContainer{
+    width: 80%;
+}
+.serverInfoContainer table{
+    width: 100%;
+}
+.serverInfoContainer table tr th{
+    width: 25%;
+}
+.serverInfoContainer table tr td{
+    width: 75%;
+}

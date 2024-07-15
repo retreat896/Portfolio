@@ -1,22 +1,22 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Kristopher Adams</title>
-    <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
     <!-- Temp Styles -->
-    <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/diagnostic.css">
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/diagnostic.css" />
     <!-- Main Styles -->
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/standaloneStyles.css">
-    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/standaloneStyles.css" />
+    <link rel="stylesheet" href="./css/bootstrap.css" />
 
-    <meta name="description" content="">
-    <meta name="author" content="html blank">
-    <meta name="generator" content="Plain html plus a bit of bootstrap">
+    <meta name="description" content="" />
+    <meta name="author" content="html blank" />
+    <meta name="generator" content="Plain html plus a bit of bootstrap" />
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
@@ -37,13 +37,12 @@
 </head>
 
 <body class="bg-body">
-
     <header>
         <!-- Fixed navbar -->
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-secondary">
+        <nav class="navbar navbar-expand-md fixed-top bg-secondary">
             <div class="container-fluid">
                 <a class="navbar-brand" title="Home" href="https://retreat896.com"><img class="logo" alt=" " title=" "
-                        src="./images/logo.png"></a>
+                        src="./images/logo.png" /></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                     aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -62,7 +61,7 @@
                                 id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown"
                                 data-bs-display="static" aria-label="Toggle theme (auto)">
                                 <img alt="Theme Toggler" title="Toggle theme" class="bi my-1 theme-icon-active"
-                                    src="./images/half-circle.svg">
+                                    src="./images/half-circle.svg" />
                                 <span class="d-lg-none ms-2" id="bd-theme-text">Toggle theme</span>
                             </button>
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-theme-text">
@@ -70,34 +69,30 @@
                                     <button type="button" class="dropdown-item d-flex align-items-center"
                                         data-bs-theme-value="light" aria-pressed="false">
                                         <img alt="Theme Toggler" title="Light" class="bi me-2 opacity-50"
-                                            src="./images/sun-fill.svg">
+                                            src="./images/sun-fill.svg" />
                                         Light
                                         <img alt="Theme Toggler" title="Selected" class="bi ms-auto d-none"
-                                            src="./images/check.svg">
-
-
+                                            src="./images/check.svg" />
                                     </button>
                                 </li>
                                 <li>
                                     <button type="button" class="dropdown-item d-flex align-items-center"
                                         data-bs-theme-value="dark" aria-pressed="false">
                                         <img alt="Theme Toggler" title="Dark" class="bi me-2 opacity-50"
-                                            src="./images/moon-stars.svg">
+                                            src="./images/moon-stars.svg" />
                                         Dark
                                         <img alt="Theme Toggler" title="Selected" class="bi ms-auto d-none"
-                                            src="./images/check.svg">
+                                            src="./images/check.svg" />
                                     </button>
                                 </li>
                                 <li>
                                     <button type="button" class="dropdown-item d-flex align-items-center active"
                                         data-bs-theme-value="auto" aria-pressed="true">
                                         <img alt="Theme Toggler" title="Auto" class="bi me-2 opacity-50"
-                                            src="./images/half-circle.svg">
+                                            src="./images/half-circle.svg" />
                                         Auto
                                         <img alt="Theme Toggler" title="Selected" class="bi ms-auto d-none"
-                                            src="./images/check.svg">
-
-
+                                            src="./images/check.svg" />
                                     </button>
                                 </li>
                             </ul>
@@ -105,8 +100,6 @@
                     </ul>
                 </div>
             </div>
-
-
         </nav>
     </header>
 
@@ -114,31 +107,44 @@
     <main class="flex-shrink-0">
         <div class="container">
             <h1 class="mt-5">The Krevers</h1>
-            <p class="lead">This is where you will find my current game servers that i am hosting.</p>
+            <p class="lead">
+                This is where you will find my current game servers that i am hosting.
+            </p>
             <div id="serverCards" class="container">
-
                 <div class="card mb-3 placeholder-wave placeholder-glow" id="loadingCard">
                     <div class="card-body flexRight placeholder-wave placeholder-glow">
-                        <div class="flexDown center placeholder-wave placeholder-glow">
+                        <div class="flexDown center placeholder-wave placeholder-glow gameCoverContainer">
                             Loading
-                            <img class="gameCover placeholder-wave placeholder-glow" alt="Loading" title="Loading" src=" ">
+                            <img class="gameCover placeholder-wave placeholder-glow" alt="Loading" title="Loading"
+                                src=" " />
                         </div>
-                        <div class="table-responsive  placeholder-wave placeholder-glow">
-                            <table class="table table-hover flexRight placeholder-wave placeholder-glow" summary="Loading">
-                                <thead>
-                                    <tr class="flexDown placeholder-wave placeholder-glow">
-                                        <th class="borderUnderline placeholder-wave placeholder-glow" scope="col">Server Name:</th>
-                                        <th class="borderUnderline placeholder-wave placeholder-glow" scope="col">IP Adress:</th>
-                                        <th class="borderUnderline placeholder-wave placeholder-glow" scope="col">Players:</th>
-                                        <th class="borderUnderline placeholder-wave placeholder-glow" scope="col">Ping:</th>
+                        <div class="placeholder-wave placeholder-glow serverInfoContainer">
+                            <table class="table table-hover placeholder-wave placeholder-glow" summary="Loading"
+                                id="placeholderTable">
+                                <tbody>
+                                    <tr class="placeholder-wave placeholder-glow">
+                                        <th class="borderUnderline placeholder-wave placeholder-glow" scope="row">
+                                            Server Name:
+                                        </th>
+                                        <td class="placeholder-wave placeholder-glow"></td>
                                     </tr>
-                                </thead>
-                                <tbody class="flexRight placeholder-wave placeholder-glow">
-                                    <tr class="flexDown placeholder-wave placeholder-glow">
-                                        <td class=" placeholder-wave placeholder-glow"></td>
-                                        <td class=" placeholder-wave placeholder-glow"></td>
-                                        <td class=" placeholder-wave placeholder-glow"></td>
-                                        <td class=" placeholder-wave placeholder-glow"></td>
+                                    <tr class="placeholder-wave placeholder-glow">
+                                        <th class="borderUnderline placeholder-wave placeholder-glow" scope="row">
+                                            IP Address:
+                                        </th>
+                                        <td class="placeholder-wave placeholder-glow"></td>
+                                    </tr>
+                                    <tr class="placeholder-wave placeholder-glow">
+                                        <th class="borderUnderline placeholder-wave placeholder-glow" scope="row">
+                                            Players:
+                                        </th>
+                                        <td class="placeholder-wave placeholder-glow"></td>
+                                    </tr>
+                                    <tr class="placeholder-wave placeholder-glow">
+                                        <th class="borderUnderline placeholder-wave placeholder-glow" scope="row">
+                                            Ping:
+                                        </th>
+                                        <td class="placeholder-wave placeholder-glow"></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -148,7 +154,6 @@
             </div>
         </div>
     </main>
-
 </body>
 
 </html>
