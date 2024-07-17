@@ -96,7 +96,7 @@ function getServerStatus() {
             </tr>
             <tr>
               <th class="borderUnderline" scope="row">Version:</th>
-              <td>${serverData.version || "null"}</td>
+              <td>${serverData.version || serverData.raw.version.name || "null"}</td>
             </tr>
           </tbody>
         </table>
