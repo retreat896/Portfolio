@@ -65,7 +65,7 @@ function getServerStatus() {
         let serverData = response[server];
         let serverName = server; // Use the server key as the name
         let serverCover = './images/' + serverName.toLowerCase() + '.jpg'; // Assuming cover images are named after the server keys
-
+        if(serverName == 'sevenDays'){serverName = '7 Days to Die'}
         let example = `
   <div class="card mb-3">
     <div class="card-body flexRight">
