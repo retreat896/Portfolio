@@ -14,7 +14,7 @@
     height: 50px;
 }
 
-.gameCover{
+.gameCover,.gameCover.placeholder{
     width: 150px;
     height: 200px;
 }
