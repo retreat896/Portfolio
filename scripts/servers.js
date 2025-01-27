@@ -10,7 +10,8 @@ const ajaxSettings = {
   }
 };
 function getServerStatus() {
-  $.ajax(ajaxSettings).done(function (response) {
+  $.ajax(ajaxSettings)
+  .done(function (response) {
     for (let server in response) {
       if (response[server].error) {
         let serverData = response[server];
@@ -113,6 +114,13 @@ function getServerStatus() {
     $('.placeholder-glow').removeClass('placeholder-glow');
     $('.placeholder').removeClass('placeholder');
     $("#loadingCard").remove();
+  })
+  .fail(function(){
+    $("#serverCards").find(".placeholder, .placehodler-sm").each(function(){
+      console.log($(this).text())
+      $(this).text("Error").addClass("bg-danger rounded").removeClass("placeholder placeholder-sm")
+
+    })
   });
 }
 
