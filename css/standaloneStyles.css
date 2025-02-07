@@ -25,11 +25,16 @@
     width: 75%;
 }
 
-#gitcard {
-    padding-top: 150px;
+#gitcard{
+    padding-top: 15px;
 }
-
+#gitcard * {
+    text-decoration: none !important;
+}
 #gitcard-slider {
     display: flex;
     justify-content: center;
+}
+#mainContent {
+    margin: 20px 0 0 0;
 }
