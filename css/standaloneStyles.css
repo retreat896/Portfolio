@@ -1,22 +1,35 @@
-#themeIcon{
+#themeIcon {
     width: 30px;
     height: 30px;
     filter: invert(1);
     margin-right: 10px;
 }
 
-.gameCoverContainer{
+.gameCoverContainer {
     width: 20%;
 }
-.serverInfoContainer{
+
+.serverInfoContainer {
     width: 80%;
 }
-.serverInfoContainer table{
+
+.serverInfoContainer table {
     width: 100%;
 }
-.serverInfoContainer table tr th{
+
+.serverInfoContainer table tr th {
     width: 25%;
 }
-.serverInfoContainer table tr td{
+
+.serverInfoContainer table tr td {
     width: 75%;
+}
+
+#gitcard {
+    padding-top: 150px;
+}
+
+#gitcard-slider {
+    display: flex;
+    justify-content: center;
 }
