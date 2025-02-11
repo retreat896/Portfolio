@@ -39,68 +39,72 @@
 <body class="bg-body">
     <header>
         <!-- Fixed navbar -->
-        <nav class="navbar navbar-expand-md fixed-top bg-secondary">
+        <nav class="navbar-expand-lg navbar bg-primary">
             <div class="container-fluid">
-                <a class="navbar-brand" title="Home" href="https://retreat896.com"><img class="logo" alt=" " title=" "
-                        src="./images/logo.png" /></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" title="Home" href="https://retreat896.com">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" title="Home" href="https://retreat896.com/servers">Servers</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <button
-                                class="btn btn-link nav-link py-2 px-0 px-lg-2 dropdown-toggle d-flex align-items-center"
-                                id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown"
-                                data-bs-display="static" aria-label="Toggle theme (auto)">
-                                <img alt="Theme Toggler" title="Toggle theme" class="bi my-1 theme-icon-active"
-                                    src="./images/half-circle.svg" />
-                                <span class="d-lg-none ms-2" id="bd-theme-text">Toggle theme</span>
-                            </button>
-                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-theme-text">
-                                <li>
-                                    <button type="button" class="dropdown-item d-flex align-items-center"
-                                        data-bs-theme-value="light" aria-pressed="false">
-                                        <img alt="Theme Toggler" title="Light" class="bi me-2 opacity-50"
-                                            src="./images/sun-fill.svg" />
-                                        Light
-                                        <img alt="Theme Toggler" title="Selected" class="bi ms-auto d-none"
-                                            src="./images/check.svg" />
-                                    </button>
-                                </li>
-                                <li>
-                                    <button type="button" class="dropdown-item d-flex align-items-center"
-                                        data-bs-theme-value="dark" aria-pressed="false">
-                                        <img alt="Theme Toggler" title="Dark" class="bi me-2 opacity-50"
-                                            src="./images/moon-stars.svg" />
-                                        Dark
-                                        <img alt="Theme Toggler" title="Selected" class="bi ms-auto d-none"
-                                            src="./images/check.svg" />
-                                    </button>
-                                </li>
-                                <li>
-                                    <button type="button" class="dropdown-item d-flex align-items-center active"
-                                        data-bs-theme-value="auto" aria-pressed="true">
-                                        <img alt="Theme Toggler" title="Auto" class="bi me-2 opacity-50"
-                                            src="./images/half-circle.svg" />
-                                        Auto
-                                        <img alt="Theme Toggler" title="Selected" class="bi ms-auto d-none"
-                                            src="./images/check.svg" />
-                                    </button>
-                                </li>
-                            </ul>
-                        </li>
+              <a class="navbar-brand" href="https://retreat896.com" title="Main Home">
+                <img class="logo" src="./images/logo.png" alt="Logo" title="Main Home">
+                Retreat896
+              </a>
+      
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" aria-controls="navbar-collapse"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+      
+              <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <button class="btn btn-link active nav-link d-flex align-items-center">
+                      <a class="nav-link active" aria-current="page" href="https://retreat896.com" title="Home">Home</a>
+                    </button>
+                  </li>
+      
+                  <li class="nav-item">
+                    <button class="btn btn-link active nav-link d-flex align-items-center">
+                      <a class="nav-link" href="https://retreat896.com/servers" title="Servers">Servers</a>
+                    </button>
+                  </li>
+      
+                  <li class="nav-item dropdown">
+                    <button class="btn btn-link nav-link py-2 px-lg-2 dropdown-toggle d-flex align-items-center"
+                      id="theme-toggle" type="button" aria-expanded="false" data-bs-toggle="dropdown"
+                      aria-label="Toggle theme (auto)">
+                      <img alt="Theme Toggler" title="Toggle theme" class="bi my-1 theme-icon-active"
+                        src="./images/half-circle.svg">
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="theme-toggle-text">
+                      <li>
+                        <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light"
+                          aria-pressed="false">
+                          <img alt="Theme Toggler" title="Light" class="bi me-2 opacity-50" src="./images/sun-fill.svg">
+                          Light
+                          <img alt="Theme Toggler" title="Selected" class="bi ms-auto d-none" src="./images/check.svg">
+                        </button>
+                      </li>
+      
+                      <li>
+                        <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark"
+                          aria-pressed="false">
+                          <img alt="Theme Toggler" title="Dark" class="bi me-2 opacity-50" src="./images/moon-stars.svg">
+                          Dark
+                          <img alt="Theme Toggler" title="Selected" class="bi ms-auto d-none" src="./images/check.svg">
+                        </button>
+                      </li>
+      
+                      <li>
+                        <button type="button" class="dropdown-item d-flex align-items-center active"
+                          data-bs-theme-value="auto" aria-pressed="true">
+                          <img alt="Theme Toggler" title="Auto" class="bi me-2 opacity-50" src="./images/half-circle.svg">
+                          Auto
+                          <img alt="Theme Toggler" title="Selected" class="bi ms-auto d-none" src="./images/check.svg">
+                        </button>
+                      </li>
                     </ul>
-                </div>
+                  </li>
+                </ul>
+              </div>
             </div>
-        </nav>
+          </nav>
     </header>
 
     <!-- Begin page content -->
