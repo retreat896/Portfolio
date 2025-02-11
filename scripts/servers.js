@@ -116,12 +116,15 @@ function getServerStatus() {
     $("#loadingCard").remove();
   })
   .fail(function(){
-    $("#serverCards").find(".placeholder, .placehodler-sm").each(function(){
+    $("#serverCards").find(".placeholder:not('.gameCoverContainer'), .placehodler-sm:not('.gameCoverContainer')").each(function(){
       console.log($(this).text())
-      $(this).text("Error").addClass("bg-danger rounded").removeClass("placeholder placeholder-sm")
+      $(this).text("Error").addClass("bg-danger rounded-end").removeClass("placeholder placeholder-sm")
 
     })
-  });
+    $("#serverCards")
+    .find(".gameCoverContainer").removeClass("placeholder placeholder-sm")
+    .html("<img class='rounded mx-auto d-block' alt='...' title='...' src='./images/filler.png' width='100%'>")
+  })
 }
 
 $(document).ready(function () {
