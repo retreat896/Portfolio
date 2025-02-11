@@ -30,28 +30,28 @@ function getServerStatus() {
         <table class="table table-hover " summary="${serverName} Server">
           <tbody>
             <tr>
-              <th class="borderUnderline bg-danger rounded-start" scope="row">Status:</th>
-              <td class="bg-danger rounded-end">Offline</td>
+              <th class=" border-0 bg-danger rounded-start" scope="row">Status:</th>
+              <td class="bg-danger rounded-end border-0">Offline</td>
             </tr>
             <tr>
-              <th class="borderUnderline" scope="row">Server Name:</th>
-              <td>${serverName.slice(0, 1).toUpperCase() + serverName.slice(1) || "null"}</td>
+              <th class="rounded-start border-0" scope="row">Server Name:</th>
+              <td class="rounded-end border-0">${serverName.slice(0, 1).toUpperCase() + serverName.slice(1) || "null"}</td>
             </tr>
             <tr>
-              <th class="borderUnderline" scope="row">IP Address:</th>
-              <td>null</td>
+              <th class="rounded-start border-0" scope="row">IP Address:</th>
+              <td class="rounded-end border-0">null</td>
             </tr>
             <tr>
-              <th class="borderUnderline" scope="row">Players:</th>
-              <td>0/0</td>
+              <th class="rounded-start border-0" scope="row">Players:</th>
+              <td class="rounded-end border-0">0/0</td>
             </tr>
             <tr>
-              <th class="borderUnderline" scope="row">Message:</th>
-              <td>${response[server].message.slice(0, 1).toUpperCase() + response[server].message.slice(1)}</td>
+              <th class="rounded-start border-0" scope="row">Message:</th>
+              <td class="rounded-end border-0">${response[server].message.slice(0, 1).toUpperCase() + response[server].message.slice(1)}</td>
             </tr>
             <tr>
-              <th class="borderUnderline" scope="row">Error:</th>
-              <td>${response[server].error.slice(0, 1).toUpperCase() + response[server].error.slice(1)}</td>
+              <th class="rounded-start border-0" scope="row">Error:</th>
+              <td class="rounded-end border-0">${response[server].error.slice(0, 1).toUpperCase() + response[server].error.slice(1)}</td>
             </tr>
           </tbody>
         </table>
@@ -78,28 +78,28 @@ function getServerStatus() {
         <table class="table table-hover " summary="${serverName} Server">
           <tbody>
             <tr>
-              <th class="borderUnderline bg-success rounded-start" scope="row">Status:</th>
-              <td class="bg-success rounded-end">Online</td>
+              <th class="bg-success rounded-start" scope="row">Status:</th>
+              <td class="bg-success rounded-end border-0">Online</td>
             </tr>
             <tr>
-              <th class="borderUnderline" scope="row">Server Name:</th>
-              <td>${(serverData.name).slice(0, 1).toUpperCase() + serverData.name.slice(1) || serverName.slice(0, 1).toUpperCase() + serverName.slice(1) || "null"}</td>
+              <th class="rounded-start border-0" scope="row">Server Name:</th>
+              <td class="rounded-end border-0">${(serverData.name).slice(0, 1).toUpperCase() + serverData.name.slice(1) || serverName.slice(0, 1).toUpperCase() + serverName.slice(1) || "null"}</td>
             </tr>
             <tr>
-              <th class="borderUnderline" scope="row">IP Address:</th>
-              <td>${serverData.connect || "null"}</td>
+              <th class="rounded-start border-0" scope="row">IP Address:</th>
+              <td class="rounded-end border-0">${serverData.connect || "null"}</td>
             </tr>
             <tr>
-              <th class="borderUnderline" scope="row">Players:</th>
-              <td>${serverData.numplayers}/${serverData.maxplayers || "null"}</td>
+              <th class="rounded-start border-0" scope="row">Players:</th>
+              <td class="rounded-end border-0">${serverData.numplayers}/${serverData.maxplayers || "null"}</td>
             </tr>
             <tr>
-              <th class="borderUnderline" scope="row">Ping:</th>
-              <td>${serverData.ping || "null"}</td>
+              <th class="rounded-start border-0" scope="row">Ping:</th>
+              <td class="rounded-end border-0">${serverData.ping || "null"}</td>
             </tr>
             <tr>
-              <th class="borderUnderline" scope="row">Version:</th>
-              <td>${serverData.version || serverData.raw.version.name || "null"}</td>
+              <th class="rounded-start border-0" scope="row">Version:</th>
+              <td class="rounded-end border-0">${serverData.version || serverData.raw.version.name || "null"}</td>
             </tr>
           </tbody>
         </table>
