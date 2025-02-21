@@ -1,56 +1,188 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="https://retreat896.com" title="Main Home">
-        <img class="logo" src="./images/logo.png" alt="Logo" title="Main Home" />
-        Retreat896
-      </a>
-      <button data-mdb-collapse-init class="navbar-toggler" type="button" data-mdb-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-        <i class="fas fa-bars"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="https://retreat896.com">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://retreat896.com/servers">Servers</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://retreat896.com/projects">Projects</a>
-          </li>
-        </ul>
-        <span class="navbar-text">
-          <div class="nav-item dropdown">
-            <button class="btn btn-link nav-link py-2 px-lg-2 dropdown-toggle d-flex align-items-center" id="theme-toggle" type="button" aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
-              <img alt="Theme Toggler" title="Toggle theme" class="bi my-1 theme-icon-active" src="./images/half-circle.svg" />
-            </button>
-            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="theme-toggle-text">
-              <li>
-                <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
-                  <img alt="Theme Toggler" title="Light" class="bi me-2 opacity-50" src="./images/sun-fill.svg" />
-                  Light
-                  <img alt="Theme Toggler" title="Selected" class="bi ms-auto d-none" src="./images/check.svg" />
-                </button>
-              </li>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kristopher Adams</title>
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+    <!-- Temp Styles -->
+    <link rel="stylesheet" href="./css/reset.css" />
+    <!-- <link rel="stylesheet" href="./css/diagnostic.css" /> -->
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="./css/main.css" />
 
-              <li>
-                <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
-                  <img alt="Theme Toggler" title="Dark" class="bi me-2 opacity-50" src="./images/moon-stars.svg" />
-                  Dark
-                  <img alt="Theme Toggler" title="Selected" class="bi ms-auto d-none" src="./images/check.svg" />
-                </button>
-              </li>
+    <link rel="stylesheet" href="./css/bootstrap.css" />
+    <link rel="stylesheet" href="./css/gitcard.css" <meta name="description" content="" />
+    <link rel="stylesheet" href="./css/standaloneStyles.css" />
+    <meta name="author" content="Kristopher Adams" />
+    <meta name="generator" content="Portfolio page" />
 
-              <li>
-                <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
-                  <img alt="Theme Toggler" title="Auto" class="bi me-2 opacity-50" src="./images/half-circle.svg" />
-                  Auto
-                  <img alt="Theme Toggler" title="Selected" class="bi ms-auto d-none" src="./images/check.svg" />
-                </button>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="./scripts/bootstrapLS.js"></script>
+  </head>
+
+  <body class="bg-body">
+    <header>
+      <!-- Fixed navbar -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="https://retreat896.com" title="Main Home">
+            <img class="logo" src="./images/logo.png" alt="Logo" title="Main Home" />
+            Retreat896
+          </a>
+          <button data-mdb-collapse-init class="navbar-toggler" type="button" data-mdb-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="https://retreat896.com">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://retreat896.com/servers">Servers</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="https://retreat896.com/projects">Projects</a>
               </li>
             </ul>
+            <span class="navbar-text">
+              <div class="nav-item dropdown">
+                <button class="btn btn-link nav-link py-2 px-lg-2 dropdown-toggle d-flex align-items-center" id="theme-toggle" type="button" aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
+                  <img alt="Theme Toggler" title="Toggle theme" class="bi my-1 theme-icon-active" src="./images/half-circle.svg" />
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="theme-toggle-text">
+                  <li>
+                    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+                      <img alt="Theme Toggler" title="Light" class="bi me-2 opacity-50" src="./images/sun-fill.svg" />
+                      Light
+                      <img alt="Theme Toggler" title="Selected" class="bi ms-auto d-none" src="./images/check.svg" />
+                    </button>
+                  </li>
+
+                  <li>
+                    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+                      <img alt="Theme Toggler" title="Dark" class="bi me-2 opacity-50" src="./images/moon-stars.svg" />
+                      Dark
+                      <img alt="Theme Toggler" title="Selected" class="bi ms-auto d-none" src="./images/check.svg" />
+                    </button>
+                  </li>
+
+                  <li>
+                    <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+                      <img alt="Theme Toggler" title="Auto" class="bi me-2 opacity-50" src="./images/half-circle.svg" />
+                      Auto
+                      <img alt="Theme Toggler" title="Selected" class="bi ms-auto d-none" src="./images/check.svg" />
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </span>
           </div>
-        </span>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Begin page content -->
+    <main id="mainContent" class="flex-shrink-0">
+      <div id="gitcard" class="slider card" x-data="{start: true, end: false}">
+        <div class="card-header">
+          <h1 class="text-center card-title">Here are some things im working on</h1>
+        </div>
+
+        <div
+          class="slider__content card-body"
+          x-ref="slider"
+          x-on:scroll.debounce="$refs.slider.scrollLeft == 0 ? start = true : start = false; Math.abs(($refs.slider.scrollWidth - $refs.slider.offsetWidth) - $refs.slider.scrollLeft) < 5 ? end = true : end = false;">
+          <a class="slider__item" href="https://retreat896.com" title="something">
+            <!-- put image here -->
+            <img src="./images/filler.png" alt="filler" title="filler" />
+            <div class="slider__info">
+              <h2>Web Portfolio</h2>
+              <small class="text-reset text-muted">sample text</small>
+            </div>
+          </a>
+          <a class="slider__item" href="https://retreat896.com" title="something">
+            <!-- put image here -->
+            <img src="./images/filler.png" alt="filler" title="filler" />
+            <div class="slider__info">
+              <h2>Card 2</h2>
+              <small class="text-reset text-muted">sample text</small>
+            </div>
+          </a>
+          <a class="slider__item" href="https://retreat896.com" title="something">
+            <!-- put image here -->
+            <img src="./images/filler.png" alt="filler" title="filler" />
+            <div class="slider__info">
+              <h2>Card 3</h2>
+              <small class="text-reset text-muted">sample text</small>
+            </div>
+          </a>
+          <a class="slider__item" href="https://retreat896.com" title="something">
+            <!-- put image here -->
+            <img src="./images/filler.png" alt="filler" title="filler" />
+            <div class="slider__info">
+              <h2>Card 4</h2>
+              <small class="text-reset text-muted">sample text</small>
+            </div>
+          </a>
+          <a class="slider__item" href="https://retreat896.com" title="something">
+            <!-- put image here -->
+            <img src="./images/filler.png" alt="filler" title="filler" />
+            <div class="slider__info">
+              <h2>Card 5</h2>
+              <small class="text-reset text-muted">sample text</small>
+            </div>
+          </a>
+          <a class="slider__item" href="https://retreat896.com" title="something">
+            <!-- put image here -->
+            <img src="./images/filler.png" alt="filler" title="filler" />
+            <div class="slider__info">
+              <h2>Card 6</h2>
+              <small class="text-reset text-muted">sample text</small>
+            </div>
+          </a>
+          <a class="slider__item" href="https://retreat896.com" title="something">
+            <!-- put image here -->
+            <img src="./images/filler.png" alt="filler" title="filler" />
+            <div class="slider__info">
+              <h2>Card 7</h2>
+              <small class="text-reset text-muted">sample text</small>
+            </div>
+          </a>
+          <a class="slider__item" href="https://retreat896.com" title="something">
+            <!-- put image here -->
+            <img src="./images/filler.png" alt="filler" title="filler" />
+            <div class="slider__info">
+              <h2>Card 8</h2>
+              <small class="text-reset text-muted">sample text</small>
+            </div>
+          </a>
+          <a class="slider__item" href="https://retreat896.com" title="something">
+            <!-- put image here -->
+            <img src="./images/filler.png" alt="filler" title="filler" />
+            <div class="slider__info">
+              <h2>Card 9</h2>
+              <small class="text-reset text-muted">sample text</small>
+            </div>
+          </a>
+          <a class="slider__item" href="https://retreat896.com" title="something">
+            <!-- put image here -->
+            <img src="./images/filler.png" alt="filler" title="filler" />
+            <div class="slider__info">
+              <h2>Card 10</h2>
+              <small class="text-reset text-muted">sample text</small>
+            </div>
+          </a>
+        </div>
+        <div id="gitcard-slider" class="slider__nav">
+          <button class="slider__nav__button" x-on:click="$refs.slider.scrollBy({left: $refs.slider.offsetWidth * -1, behavior: 'smooth'});" x-bind:class="start ? '' : 'slider__nav__button--active'">Previous</button>
+          <button class="slider__nav__button" x-on:click="$refs.slider.scrollBy({left: $refs.slider.offsetWidth, behavior: 'smooth'});" x-bind:class="end ? '' : 'slider__nav__button--active'">Next</button>
+        </div>
       </div>
-    </div>
-  </nav>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.10.2/cdn.js"></script>
+  </body>
+</html>
