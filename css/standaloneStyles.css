@@ -7,6 +7,7 @@
 
 .gameCoverContainer {
     width: 20%;
+    padding-right: var(--bs-card-spacer-y);
 }
 
 .serverInfoContainer {
