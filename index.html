@@ -1,47 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kristopher Adams</title>
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+    <!-- Temp Styles -->
+    <link rel="stylesheet" href="./css/reset.css" />
+    <!-- <link rel="stylesheet" href="./css/diagnostic.css" /> -->
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="./css/main.css" />
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kristopher Adams</title>
-  <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
-  <!-- Temp Styles -->
-  <link rel="stylesheet" href="./css/reset.css" />
-  <!-- <link rel="stylesheet" href="./css/diagnostic.css" /> -->
-  <!-- Main Styles -->
-  <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/bootstrap.css" />
+    <link rel="stylesheet" href="./css/gitcard.css" <meta name="description" content="" />
+    <link rel="stylesheet" href="./css/standaloneStyles.css" />
+    <link rel="stylesheet" href="./css/githubCalendar.css" />
+    <meta name="author" content="Kristopher Adams" />
+    <meta name="generator" content="Portfolio page" />
 
-  <link rel="stylesheet" href="./css/bootstrap.css" />
-  <link rel="stylesheet" href="./css/gitcard.css" <meta name="description" content="" />
-  <link rel="stylesheet" href="./css/standaloneStyles.css" />
-  <meta name="author" content="Kristopher Adams" />
-  <meta name="generator" content="Portfolio page" />
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
+    <script src="./scripts/bootstrapLS.js"></script>
+    <script src="./scripts/dynamic.js"></script>
+  </head>
 
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"
-    integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-  <script src="./scripts/bootstrapLS.js"></script>
-  <script src="./scripts/dynamic.js"></script>
-</head>
+  <body class="bg-body">
+    <header id="header">
+      <!-- Fixed navbar -->
+      <script>
+        appendModule("navbar", "#header");
+      </script>
+    </header>
 
-<body class="bg-body">
-  <header id="header">
-    <!-- Fixed navbar -->
-    <script>appendModule("navbar", "#header");</script>
-  </header>
-
-  <!-- Begin page content -->
-  <main id="mainContent" class="flex-shrink-0">
-    <h1>Jeremy B.</h1>
-  </main>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.10.2/cdn.js"></script>
-</body>
-
+    <!-- Begin page content -->
+    <main id="mainContent" class="flex-shrink-0">
+      <div class="container">
+        <h1 class="text-body">Who is Kristopher Adams?</h1>
+        <p class="lead">This is where you will find information about me. Such as my Projects and software I use. This page is a work in progress but it will get there.</p>
+        <div class="container">
+          <div class="mb-3">
+            <div class="text-body">Github</div>
+            <div class="">
+              <div id="gitcalendar" class="bg-body-secondary">Loading...</div>
+              <script>
+                GitHubCalendar("#gitcalendar", "retreat896", { summary_text: "Contributions", responsive: true, global_stats: false, tooltips: true, cache: 60 }).then(function (response) {
+                  $("#gitcalendar > div.position-relative > div > div > div.width-full.f6.px-0.px-md-5.py-1").remove();
+                });
+              </script>
+              <p class="card-text text-body">
+                <button id="gitButton" class="git-button">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M12 0.296997C5.37 0.296997 0 5.67 0 12.297C0 17.6 3.438 22.097 8.205 23.682C8.805 23.795 9.025 23.424 9.025 23.105C9.025 22.82 9.015 22.065 9.01 21.065C5.672 21.789 4.968 19.455 4.968 19.455C4.422 18.07 3.633 17.7 3.633 17.7C2.546 16.956 3.717 16.971 3.717 16.971C4.922 17.055 5.555 18.207 5.555 18.207C6.625 20.042 8.364 19.512 9.05 19.205C9.158 18.429 9.467 17.9 9.81 17.6C7.145 17.3 4.344 16.268 4.344 11.67C4.344 10.36 4.809 9.29 5.579 8.45C5.444 8.147 5.039 6.927 5.684 5.274C5.684 5.274 6.689 4.952 8.984 6.504C9.944 6.237 10.964 6.105 11.984 6.099C13.004 6.105 14.024 6.237 14.984 6.504C17.264 4.952 18.269 5.274 18.269 5.274C18.914 6.927 18.509 8.147 18.389 8.45C19.154 9.29 19.619 10.36 19.619 11.67C19.619 16.28 16.814 17.295 14.144 17.59C14.564 17.95 14.954 18.686 14.954 19.81C14.954 21.416 14.939 22.706 14.939 23.096C14.939 23.411 15.149 23.786 15.764 23.666C20.565 22.092 24 17.592 24 12.297C24 5.67 18.627 0.296997 12 0.296997Z"
+                      fill="white"></path>
+                  </svg>
+                  <p class="git-button-text">Retreat896</p>
+                </button>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.10.2/cdn.js"></script>
+  </body>
 </html>
