@@ -18,4 +18,12 @@ function appendModule(module, element) {
         data = parser.parseFromString(data, "text/html");
         element.append(data.body.firstChild);
     });
+    return true;
+}
+function changeBreadCrumb(newBreadCrumbText) {
+    let oldBreadCrumb = $("#navbar").find(".nav-link.active");
+    oldBreadCrumb.removeClass("active");
+    let tempBreadCrumb = $(".mavbar").find(".nav-link:contains('" + newBreadCrumbText + "')");
+    tempBreadCrumb.addClass("active");
+    console.log("Changing BreadCrumb to " + newBreadCrumbText);
 }

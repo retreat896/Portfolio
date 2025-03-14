@@ -1,12 +1,12 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary">
+<nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-body-tertiary">
     <div class="container-fluid">
         <a class="navbar-brand" href="https://retreat896.com" title="Main Home">
             <img class="logo" src="./images/logo.png" alt="Logo" title="Main Home" />
             Retreat896
         </a>
-        <button data-mdb-collapse-init class="navbar-toggler" type="button" data-mdb-target="#navbarText"
+        <button data-bs-toggle="collapse" class="navbar-toggler" type="button" data-bs-target="#navbarText"
             aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="fas fa-bars"></i>
+            <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -21,7 +21,7 @@
                 </li>
             </ul>
             <span class="navbar-text">
-                <div class="nav-item dropdown">
+                <div id="theme-toggle" class="nav-item dropdown">
                     <button class="btn btn-link nav-link py-2 px-lg-2 dropdown-toggle d-flex align-items-center"
                         id="theme-toggle" type="button" aria-expanded="false" data-bs-toggle="dropdown"
                         aria-label="Toggle theme (auto)">
