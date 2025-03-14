@@ -34,7 +34,16 @@
 <body class="bg-body">
   <header id="header">
     <!-- Fixed navbar -->
-    <script>appendModule("navbar", "#header");</script>
+    <script>
+      async function init() {
+        try {
+          await appendModule("navbar", "#header");
+          changeBreadCrumb("Projects");
+        } catch (error) {
+          console.error("Error appending module:", error);
+        }
+      }
+      init();</script>
   </header>
 
   <!-- Begin page content -->
