@@ -1,4 +1,4 @@
-<nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-body-tertiary">
+<nav id="navbar" class="navbar navbar-expand-lg navbar-collapse-md navbar-light bg-body-tertiary">
     <div class="container-fluid">
         <a class="navbar-brand" href="https://retreat896.com" title="Main Home">
             <img class="logo" src="./images/logo.png" alt="Logo" title="Main Home" />
@@ -11,13 +11,13 @@
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" onclick="changePage(window.location.origin+'/')" title="Home" href="#">Home</a>
+                    <a id="homeNavLink" class="nav-link" onclick="changePage(window.location.origin+'/')" title="Home" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" onclick="changePage(window.location.origin+'/servers')" href="#">Servers</a>
+                    <a id="serversNavLink" class="nav-link" onclick="changePage(window.location.origin+'/servers')" href="#">Servers</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" onclick="changePage(window.location.origin+'/projects')" href="#">Projects</a>
+                    <a id="projectsNavLink" class="nav-link" onclick="changePage(window.location.origin+'/projects')" href="#">Projects</a>
                 </li>
             </ul>
         </div>

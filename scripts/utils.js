@@ -1,8 +1,9 @@
 $(document).ready(function () {
     appendModule("navbar", "#header").then(function () {
-       onPageLoad();
+        setActiveNav()
+        onPageLoad();
     });
- });
+});
 
 async function appendModule(module, element) {
     return new Promise((resolve, reject) => {
@@ -30,10 +31,22 @@ async function appendModule(module, element) {
         });
     })
 }
+
+function setActiveNav() {
+    let url = window.location.pathname;
+    if (url == "/" || url == "/index.html") {
+        $("#homeNavLink").addClass("active");
+    } else if (url.indexOf("/servers") != -1) {
+        $("#serversNavLink").addClass("active");
+    } else if (url.indexOf("/projects") != -1) {
+        $("#projectsNavLink").addClass("active");
+    }
+}
+
 async function onPageLoad() {
     return new Promise((resolve, reject) => {
         try {
-            $(".pageLoadShow").each(function () { 
+            $(".pageLoadShow").each(function () {
                 $(this).removeClass("pageLoadShow");
             });
             setTimeout(function () {
@@ -59,7 +72,7 @@ function changePage(url) {
 
         // Show the new animation smoothly
         $("#loadNewPageAnimation").addClass("changePageGithub");
-        
+
         // Redirect after animation completes
         setTimeout(function () {
             window.location.href = url;
@@ -69,9 +82,9 @@ function changePage(url) {
     }
 
     // handle local testing with localhost
-    if(window.location.origin.indexOf("localhost") > -1 || window.location.origin.indexOf("127.0.0.1") > -1){
-        url= url.replace("https://", "http://");
-        if((url!="http://localhost:3000/" || url!="http://127.0.0.1:3000/")&&(url != "http://localhost/" && url != "http://127.0.0.1:3000/")){
+    if (window.location.origin.indexOf("localhost") > -1 || window.location.origin.indexOf("127.0.0.1") > -1) {
+        url = url.replace("https://", "http://");
+        if ((url != "http://localhost:3000/" || url != "http://127.0.0.1:3000/") && (url != "http://localhost/" && url != "http://127.0.0.1:3000/")) {
             url = url + ".html"
         }
     }
@@ -82,8 +95,8 @@ function changePage(url) {
     // Show the new animation smoothly
     setTimeout(function () {
         $("#loadNewPageAnimation").addClass("changePageDefault");
-    },100);
-    
+    }, 100);
+
     // Redirect after animation completes
     setTimeout(function () {
         window.location.href = url;
