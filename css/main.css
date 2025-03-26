@@ -1,46 +1,694 @@
 .bi {
-    width: 1em;
-    height: 1em;
-    vertical-align: -.125em;
-    fill: currentcolor;
+   width: 1em;
+   height: 1em;
+   vertical-align: -0.125em;
+   fill: currentcolor;
 }
 
 .me-2 {
-    margin-right: .5rem !important;
+   margin-right: 0.5rem !important;
 }
 
 .logo {
-    width: 50px;
-    height: 50px;
+   width: 50px;
+   height: 50px;
 }
 
-.gameCover,.gameCover.placeholder{
-    
-    height: 200px;
+.gameCover,
+.gameCover.placeholder {
+   height: 200px;
 }
 
-.flexDown{
-    display: flex;
-    flex-direction: column;
+.flexDown {
+   display: flex;
+   flex-direction: column;
 }
 
-.flexRight{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
+.flexRight {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: flex-start;
 }
 
-.center{
-    align-items: center;
-    justify-content: center;
-    margin-top: auto !important;
-    margin-bottom: auto !important;
+.center {
+   align-items: center;
+   justify-content: center;
+   margin-top: auto !important;
+   margin-bottom: auto !important;
 }
 
-.borderOutline{
-    border: 1px solid black !important;
+.borderOutline {
+   border: 1px solid black !important;
 }
-.borderUnderline{
-    border-bottom: 1px solid rgb(73, 80, 87) !important;
+.borderUnderline {
+   border-bottom: 1px solid rgb(73, 80, 87) !important;
 }
+main > .container {
+   padding: 75px 15px 0;
+}
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+/*
+    Git Cards
+*/
+:root {
+   --scrollcolor: #fff;
+   --scrollbackground: #141e27;
+}
+* {
+   box-sizing: border-box;
+}
+html,
+body {
+   padding: 0;
+   margin: 0;
+   height: 100vh;
+}
+body {
+   background: #203239;
+}
+.title {
+   font-size: 2.5rem;
+   font-family: system-ui;
+   line-height: 1.1;
+   font-weight: 300;
+   color: #fff;
+   margin: 4rem auto 1rem;
+   width: 85%;
+   max-width: 1280px;
+}
+.slider {
+   width: 85%;
+   max-width: 1280px;
+   margin: 0 auto;
+}
+.slider__content {
+   overflow-x: scroll;
+   scroll-snap-type: x mandatory;
+   display: flex;
+   gap: 1rem;
+   padding-bottom: 1rem;
+   scrollbar-color: var(--scrollcolor) var(--scrollbackground);
+}
+.slider__content::-webkit-scrollbar {
+   height: 0.5rem;
+   width: 0.5rem;
+   border-radius: 1rem;
+   background: var(--scrollbackground);
+}
+.slider__content::-webkit-scrollbar-thumb {
+   border-radius: 1rem;
+   background: var(--scrollcolor);
+}
+.slider__content::-webkit-scrollbar-track {
+   border-radius: 1rem;
+   background: var(--scrollbackground);
+}
+.slider__item {
+   scroll-snap-align: start;
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-end;
+   min-width: 100%;
+   width: 100%;
+   border-radius: 0.25rem;
+   overflow: hidden;
+   position: relative;
+   aspect-ratio: 1;
+}
+@media (min-width: 460px) {
+   .slider__item {
+      aspect-ratio: 0.6666666667;
+      min-width: calc((100% / 2) - 2rem);
+   }
+}
+@media (min-width: 940px) {
+   .slider__item {
+      min-width: calc((100% / 3) - 4rem);
+   }
+}
+.slider__image {
+   display: block;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   position: absolute;
+   top: 0;
+   left: 0;
+}
+.slider__info {
+   position: relative;
+   padding: 4rem 2rem 2rem;
+   background: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(32, 50, 57, 0));
+}
+.slider__info h2 {
+   color: #fff;
+   font-family: system-ui;
+   line-height: 1.1;
+   font-weight: 300;
+   font-size: 1.75rem;
+   margin: 0;
+}
+.slider__nav {
+   margin: 1rem;
+   width: 100%;
+   padding: 0;
+   display: flex;
+   justify-content: flex-start;
+   gap: 1rem;
+   align-content: center;
+   align-items: center;
+   pointer-events: none;
+}
+@media (min-width: 460px) {
+   .slider__nav {
+      justify-content: flex-end;
+   }
+}
+.slider__nav__button {
+   margin: 0;
+   appearance: none;
+   border: 0;
+   border-radius: 2rem;
+   background: #fff;
+   color: #203239;
+   padding: 0.5rem 1rem;
+   font-size: 0.75rem;
+   line-height: 1;
+   pointer-events: none;
+   transition: 0.2s ease-out;
+   opacity: 0.25;
+}
+.slider__nav__button--active {
+   opacity: 1;
+   pointer-events: auto;
+   cursor: pointer;
+}
+
+/* 
+  Standalone styles 
+  */
+#themeIcon {
+   width: 30px;
+   height: 30px;
+   filter: invert(1);
+   margin-right: 10px;
+}
+
+.gameCoverContainer {
+   width: 20%;
+   padding-right: var(--bs-card-spacer-y);
+}
+
+.serverInfoContainer {
+   width: 80%;
+}
+
+.serverInfoContainer table {
+   width: 100%;
+}
+
+.serverInfoContainer table tr th {
+   width: 25%;
+}
+
+.serverInfoContainer table tr td {
+   width: 75%;
+}
+
+#gitcard {
+   padding-top: 15px;
+}
+#gitcard * {
+   text-decoration: none !important;
+}
+#gitcard-slider {
+   display: flex;
+   justify-content: center;
+}
+#mainContent {
+   margin: 20px 0 0 0;
+}
+#gitButton {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 10px 15px;
+   gap: 15px;
+   background-color: #181717;
+   outline: 3px #181717 solid;
+   outline-offset: -3px;
+   border-radius: 5px;
+   border: none;
+   cursor: pointer;
+   transition: 400ms;
+}
+
+#gitButton .git-button-text {
+   color: white;
+   font-weight: 700;
+   font-size: 1em;
+   transition: 400ms;
+   margin: 0; /* Remove default margin */
+   display: flex;
+   align-items: center; /* Ensure vertical alignment */
+}
+
+#gitButton svg path {
+   transition: 400ms;
+}
+
+#gitButton:hover {
+   background-color: transparent;
+}
+
+#gitButton:hover .git-button-text {
+   color: #181717;
+}
+
+#gitButton:hover svg path {
+   fill: #181717;
+}
+
+.pageFill {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100vw;
+   height: 100vh;
+   background-color: #181717;
+   z-index: 9998;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   pointer-events: none;
+   overflow: hidden;
+}
+
+.pageLoadHide {
+   background-color: #181717;
+   z-index: 9999;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   transition: all 1s;
+}
+
+.pageLoadShow {
+   display: none;
+}
+/*   
+  loadingAnimations 
+*/
+.loader {
+   opacity: 0;
+   width: 10em;
+   height: 10em;
+   background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100%);
+   animation: spin 1s;
+   position: absolute;
+   margin: auto;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   overflow: visible;
+}
+
+.loader::before {
+   content: "";
+   z-index: -1;
+   position: absolute;
+   inset: 0;
+   background: inherit;
+   transform: translate3d(0, 0, 0) scale(0.95);
+   filter: blur(20px);
+}
+
+.changePageGithub {
+   opacity: 0;
+   width: 10em;
+   height: 10em;
+   background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100%);
+   animation: reverseSpinGithub 1s;
+   position: absolute;
+   margin: auto;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   overflow: visible;
+}
+
+.changePageGithub::before {
+   content: "";
+   z-index: -1;
+   position: absolute;
+   inset: 0;
+   background: inherit;
+   transform: translate3d(0, 0, 0) scale(0.95);
+}
+
+.changePageDefault {
+   opacity: 0;
+   width: 10em;
+   height: 10em;
+   background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100%);
+   animation: reverseSpinDefault 1s;
+   position: absolute;
+   margin: auto;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   overflow: visible;
+}
+
+.changePageDefault::before {
+   content: "";
+   z-index: -1;
+   position: absolute;
+   inset: 0;
+   background: inherit;
+   transform: translate3d(0, 0, 0) scale(0.95);
+   filter: blur(20px);
+}
+
+@keyframes spin {
+   0% {
+     border-radius: 0%;
+      opacity: 1;
+      transform: rotate(0deg) scale(0);
+      background: linear-gradient(-45deg, #fb00ff 0%, #00dade 100%);
+   }
+   50% {
+      transform: rotate(-360deg) scale(1);
+      border-radius: 50%;
+      background: linear-gradient(-45deg, #fb00ff 0%, #00dade 100%);
+      opacity: 1;
+   }
+   95% {
+      transform: scale(20) rotate(360deg);
+      opacity: 0;
+      border-radius: 50%;
+   }
+   100% {
+      opacity: 0;
+      border-radius: 50%;
+   }
+}
+
+@keyframes reverseSpinGithub {
+   0% {
+      opacity: 1;
+      background-image: url("../images/github.svg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-color: rgba(0, 0, 0, 0);
+      transform: scale(20) rotate(360deg);
+      opacity: 0;
+   }
+   50% {
+      transform: rotate(360deg) scale(2);
+      background-image: url("../images/github.svg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-color: rgba(0, 0, 0, 0);
+      border-radius: 50%;
+      opacity: 1;
+   }
+   100% {
+      transform: rotate(360deg) scale(2) translatex(100vw);
+      background-image: url("../images/github.svg");
+      background-color: rgba(0, 0, 0, 0);
+      background-size: cover;
+      opacity: 1;
+   }
+}
+
+@keyframes reverseSpinDefault {
+   0% {
+      opacity: 1;
+      background: linear-gradient(-45deg, #fb00ff 0%, #00dade 100%);
+      border-radius: 50%;
+      transform: scale(20) rotate(360deg);
+      opacity: 0;
+   }
+   50% {
+      transform: rotate(360deg) scale(2);
+      background: linear-gradient(-45deg, #fb00ff 0%, #00dade 100%);
+      border-radius: 50%;
+      opacity: 1;
+   }
+   100% {
+      transform: rotate(360deg) scale(2) translatex(100vw);
+      background: linear-gradient(-45deg, #fb00ff 0%, #00dade 100%);
+      border-radius: none;
+      opacity: 1;
+   }
+}
+
+/*
+  GitHub Commit Calendar
+*/
+:root {
+    --color-calendar-graph-day-bg: #dddbdb;
+    --color-calendar-graph-day-L1-bg: #39dd34;
+    --color-calendar-graph-day-L2-bg: #45a045;
+    --color-calendar-graph-day-L3-bg: #047526;
+    --color-calendar-graph-day-L4-bg: #0a4208;
+  }
+  
+  .ContributionCalendar-day[data-level='0'] {
+      background-color: var(--color-calendar-graph-day-bg);
+  }
+  
+  .ContributionCalendar-day[data-level='1'] {
+      background-color: var(--color-calendar-graph-day-L1-bg);
+  }
+  
+  .ContributionCalendar-day[data-level='2'] {
+      background-color: var(--color-calendar-graph-day-L2-bg);
+  }
+  
+  .ContributionCalendar-day[data-level='3'] {
+      background-color: var(--color-calendar-graph-day-L3-bg);
+  }
+  
+  .ContributionCalendar-day[data-level='4'] {
+      background-color: var(--color-calendar-graph-day-L4-bg);
+  }
+  
+  table.ContributionCalendar-grid {
+      margin-bottom: 0pt;
+  }
+  
+  table.ContributionCalendar-grid td {
+      border-collapse: separate !important;
+      padding: 4pt;
+  }
+  
+  table.ContributionCalendar-grid td span.sr-only {
+      display: none;
+  }
+  
+  td.ContributionCalendar-label span[aria-hidden='true'] {
+      font-size: 8pt;
+      left: -1pt;
+  }
+  
+  tool-tip {
+      display: none;
+  }
+  
+  .calendar .width-full > .float-left {
+      display: none;
+  }
+  
+  .calendar {
+      font-family: Helvetica, arial;
+      border: 1px solid #DDDDDD;
+      border-radius: 3px;
+      min-height: 243px;
+      text-align: center;
+      margin: 0 auto;
+  }
+  
+  .calendar-graph text.wday,
+  .calendar-graph text.month {
+      font-size: 10px;
+      fill: #aaa;
+  }
+  
+  div.px-md-5 {
+      height: 2rem;
+  }
+  
+  div.float-right {
+      text-align: right;
+      padding: 0 14px 10px 0;
+      display: inline-block;
+      float: right;
+  }
+  
+  div.float-right div {
+      display: inline-block;
+      list-style: none;
+      margin: 0 5px;
+      position: relative;
+      bottom: -1px;
+      padding: 0;
+  }
+  
+  div.float-right span.sr-only {
+      display: none;
+  }
+  
+  .contrib-legend .legend li {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+  }
+  
+  .text-small {
+      font-size: 12px;
+      color: #767676;
+  }
+  
+  .calendar-graph {
+      padding: 5px 0 0;
+      text-align: center;
+  }
+  
+  .contrib-column {
+      padding: 15px 0;
+      text-align: center;
+      border-left: 1px solid #ddd;
+      border-top: 1px solid #ddd;
+      font-size: 11px;
+  }
+  
+  .contrib-column-first {
+      border-left: 0;
+  }
+  
+  .table-column {
+      box-sizing: border-box;
+      display: table-cell;
+      width: 1%;
+      padding-right: 10px;
+      padding-left: 10px;
+      vertical-align: top;
+  }
+  
+  .contrib-number {
+      font-weight: 300;
+      line-height: 1.3em;
+      font-size: 24px;
+      display: block;
+      color: #333;
+  }
+  
+  .calendar img.spinner {
+      width: 70px;
+      margin-top: 50px;
+      min-height: 70px;
+  }
+  
+  .monospace {
+      text-align: center;
+      color: #000;
+      font-family: monospace;
+  }
+  
+  .monospace a {
+      color: #1D75AB;
+      text-decoration: none;
+  }
+  
+  .contrib-footer {
+      font-size: 11px;
+      padding: 0 10px 12px;
+      text-align: left;
+      width: 100%;
+      box-sizing: border-box;
+      height: 26px;
+  }
+  
+  .left.text-muted {
+      float: left;
+      margin-left: 9px;
+      color: #767676;
+  }
+  .left.text-muted a {
+      color: #4078c0;
+      text-decoration: none;
+  }
+  .left.text-muted a:hover,
+  .monospace a:hover {
+      text-decoration: underline;
+  }
+  
+  h2.f4.text-normal.mb-3 {
+      display: none;
+  }
+  
+  .float-left.text-gray {
+      float: left;
+  }
+  #user-activity-overview{
+      display:none;
+  }
+  
+  .day-tooltip {
+      white-space: nowrap;
+      position: absolute;
+      z-index: 99999;
+      padding: 10px;
+      font-size: 12px;
+      color: #959da5;
+      text-align: center;
+      background: rgba(0,0,0,.85);
+      border-radius: 3px;
+      display: none;
+      pointer-events: none;
+  }
+  .day-tooltip strong {
+      color: #dfe2e5;
+  }
+  .day-tooltip.is-visible {
+      display: block;
+  }
+  .day-tooltip:after {
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      width: 5px;
+      height: 5px;
+      box-sizing: border-box;
+      margin: 0 0 0 -5px;
+      content: " ";
+      border: 5px solid transparent;
+      border-top-color: rgba(0,0,0,.85)
+  }
+  
+  text.ContributionCalendar-label {
+      fill: #ccc;
+      font-size: 11px;
+  }
+  
+  @media screen and (max-width: 768px) {
+      .table-column {
+          display: block;
+          width: 100%;
+      }
+  }
+  
