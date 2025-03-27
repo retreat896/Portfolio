@@ -34,41 +34,41 @@
       <!-- Begin page content -->
       <main id="mainContent" class="flex-shrink-0">
          <div class="container">
-            <div id="gitcard" class="slider card" x-data="{start: true, end: false}">
+            <div id="gitcard" class="slider card bg-dark" x-data="{start: true, end: false}">
                <div class="card-header">
-                  <h1 class="text-center card-title">Here are some things im working on</h1>
+                  <h1 class="text-center card-title">Here are some coding projects i'm working on.</h1>
                </div>
 
                <div
                   class="slider__content"
                   x-ref="slider"
                   x-on:scroll.debounce="$refs.slider.scrollLeft == 0 ? start = true : start = false; Math.abs(($refs.slider.scrollWidth - $refs.slider.offsetWidth) - $refs.slider.scrollLeft) < 5 ? end = true : end = false;">
-                  <a class="slider__item" href="https://retreat896.com" title="something">
+                  <a class="slider__item" href="#" onclick="changePage('https://github.com/retreat896/Portfolio')" title="https://github.com/retreat896/Portfolio">
                      <!-- put image here -->
-                     <img src="./images/filler.png" alt="filler" title="filler" />
+                     <img src="./images/gitcard-portfolio.png"/>
                      <div class="slider__info">
                         <h2>Web Portfolio</h2>
-                        <small class="text-reset text-muted">sample text</small>
+                        <small class="text-reset text-muted">A small static html based portfolio. Acts as a sandbox for me to mess with HTML, JS, and CSS.</small>
                      </div>
                   </a>
-                  <a class="slider__item" href="https://retreat896.com" title="something">
+                  <a class="slider__item" href="#" onclick="changePage('https://github.com/retreat896/Html2ZPL')" title="https://github.com/retreat896/Html2ZPL">
                      <!-- put image here -->
-                     <img src="./images/filler.png" alt="filler" title="filler" />
+                     <img src="./images/gitcard-ZPL.png"/>
                      <div class="slider__info">
-                        <h2>Card 2</h2>
-                        <small class="text-reset text-muted">sample text</small>
+                        <h2>ZPL GUI Editor</h2>
+                        <small class="text-reset text-muted">An advanced GUI for editing ZPL labels using HTML and JS.</small>
                      </div>
                   </a>
-                  <a class="slider__item" href="https://retreat896.com" title="something">
-                     <!-- put image here -->
-                     <img src="./images/filler.png" alt="filler" title="filler" />
+                  <a class="slider__item" href="#" onclick="changePage('https://github.com/Pioneer-Rocketry/PioneerRocketry-Website')" title="https://github.com/Pioneer-Rocketry/PioneerRocketry-Website">
+                     
+                     <img src="./images/gitcard-rocketry.png"/>
                      <div class="slider__info">
-                        <h2>Card 3</h2>
-                        <small class="text-reset text-muted">sample text</small>
+                        <h2>UWP Rocketry Webpage</h2>
+                        <small class="text-reset text-muted">The University of Wisconsion Platteville Pioneer Rocketry website.</small>
                      </div>
                   </a>
-                  <a class="slider__item" href="https://retreat896.com" title="something">
-                     <!-- put image here -->
+                   <!--<a class="slider__item" href="https://retreat896.com" title="something">
+                    
                      <img src="./images/filler.png" alt="filler" title="filler" />
                      <div class="slider__info">
                         <h2>Card 4</h2>
@@ -76,7 +76,7 @@
                      </div>
                   </a>
                   <a class="slider__item" href="https://retreat896.com" title="something">
-                     <!-- put image here -->
+                     
                      <img src="./images/filler.png" alt="filler" title="filler" />
                      <div class="slider__info">
                         <h2>Card 5</h2>
@@ -84,7 +84,7 @@
                      </div>
                   </a>
                   <a class="slider__item" href="https://retreat896.com" title="something">
-                     <!-- put image here -->
+                    
                      <img src="./images/filler.png" alt="filler" title="filler" />
                      <div class="slider__info">
                         <h2>Card 6</h2>
@@ -92,7 +92,7 @@
                      </div>
                   </a>
                   <a class="slider__item" href="https://retreat896.com" title="something">
-                     <!-- put image here -->
+                     
                      <img src="./images/filler.png" alt="filler" title="filler" />
                      <div class="slider__info">
                         <h2>Card 7</h2>
@@ -100,7 +100,7 @@
                      </div>
                   </a>
                   <a class="slider__item" href="https://retreat896.com" title="something">
-                     <!-- put image here -->
+                     
                      <img src="./images/filler.png" alt="filler" title="filler" />
                      <div class="slider__info">
                         <h2>Card 8</h2>
@@ -108,7 +108,7 @@
                      </div>
                   </a>
                   <a class="slider__item" href="https://retreat896.com" title="something">
-                     <!-- put image here -->
+                     
                      <img src="./images/filler.png" alt="filler" title="filler" />
                      <div class="slider__info">
                         <h2>Card 9</h2>
@@ -116,13 +116,13 @@
                      </div>
                   </a>
                   <a class="slider__item" href="https://retreat896.com" title="something">
-                     <!-- put image here -->
+                     
                      <img src="./images/filler.png" alt="filler" title="filler" />
                      <div class="slider__info">
                         <h2>Card 10</h2>
                         <small class="text-reset text-muted">sample text</small>
                      </div>
-                  </a>
+                  </a> -->
                </div>
                <div id="gitcard-slider" class="slider__nav">
                   <button class="slider__nav__button" x-on:click="$refs.slider.scrollBy({left: $refs.slider.offsetWidth * -1, behavior: 'smooth'});" x-bind:class="start ? '' : 'slider__nav__button--active'">Previous</button>

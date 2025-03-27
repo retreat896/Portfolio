@@ -66,41 +66,41 @@ function changePage(url) {
     // Check if the URL starts with "https://github"
     if (url.indexOf("https://github") === 0) {
         console.log("github");
-
-        // Hide current loader animation
-        $("#loadNewPageAnimation").removeClass("loader").parent().css("opacity", "1").css('transition', 'opacity 0s ease-in-out');
-
-        // Show the new animation smoothly
-        $("#loadNewPageAnimation").addClass("changePageGithub");
-
-        // Redirect after animation completes
+        $("#loadNewPageAnimation")
+            .removeClass("loader")
+            .addClass("changePageGithub")
+        $("#loadNewPageAnimation").parent()
+            .css("opacity", "1")
+            .css('transition', 'opacity 0s ease-in-out');
         setTimeout(function () {
             window.location.href = url;
         }, 1000);
-
         return;
     }
 
     // handle local testing with localhost
     if (window.location.origin.indexOf("localhost") > -1 || window.location.origin.indexOf("127.0.0.1") > -1) {
         url = url.replace("https://", "http://");
-        if ((url != "http://localhost:3000/" || url != "http://127.0.0.1:3000/") && (url != "http://localhost/" && url != "http://127.0.0.1:3000/")) {
+        if ((url != "http://localhost:3000/" || url != "http://127.0.0.1:3000/") &&
+            (url != "http://localhost/" && url != "http://127.0.0.1:3000/") &&
+            (url.indexOf("localhost") != -1 || url.indexOf("127.0.0.1") != -1)) {
             url = url + ".html"
         }
     }
 
     console.log("Transfering User to " + url);
     $("#loadNewPageAnimation").removeClass("loader").parent().css("opacity", "1").css('transition', 'opacity .25s ease-in-out');
-
-    // Show the new animation smoothly
     setTimeout(function () {
         $("#loadNewPageAnimation").addClass("changePageDefault");
     }, 100);
-
-    // Redirect after animation completes
     setTimeout(function () {
         window.location.href = url;
+        setTimeout(function () {
+            $("#loadNewPageAnimation").removeClass("changePageDefault").parent().css("opacity", "0").css('transition', 'opacity 0s ease-in-out');
+        }, 500);
     }, 1200);
+
+
 }
 
 
