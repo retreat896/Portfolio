@@ -72,11 +72,12 @@ function changePage(url) {
         $("#loadNewPageAnimation").parent()
             .css("opacity", "1")
             .css('transition', 'opacity 0s ease-in-out');
+            $(document).on("onbeforeunload", function () {
+                $("#loadNewPageAnimation").removeClass("changePageDefault").parent().css("opacity", "0").css('transition', 'opacity 0s ease-in-out');
+            });
         setTimeout(function () {
             window.location.href = url;
-            setTimeout(function () {
-                $("#loadNewPageAnimation").removeClass("changePageDefault").parent().css("opacity", "0").css('transition', 'opacity 0s ease-in-out');
-            }, 1500);
+            
         }, 1000);
         return;
     }
@@ -96,11 +97,11 @@ function changePage(url) {
     setTimeout(function () {
         $("#loadNewPageAnimation").addClass("changePageDefault");
     }, 100);
+    $(document).on("onbeforeunload", function () {
+        $("#loadNewPageAnimation").removeClass("changePageDefault").parent().css("opacity", "0").css('transition', 'opacity 0s ease-in-out');
+    });
     setTimeout(function () {
         window.location.href = url;
-        setTimeout(function () {
-            $("#loadNewPageAnimation").removeClass("changePageDefault").parent().css("opacity", "0").css('transition', 'opacity 0s ease-in-out');
-        }, 1500);
     }, 1200);
 
 
