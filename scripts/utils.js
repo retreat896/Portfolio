@@ -74,6 +74,9 @@ function changePage(url) {
             .css('transition', 'opacity 0s ease-in-out');
         setTimeout(function () {
             window.location.href = url;
+            setTimeout(function () {
+                $("#loadNewPageAnimation").removeClass("changePageDefault").parent().css("opacity", "0").css('transition', 'opacity 0s ease-in-out');
+            }, 1500);
         }, 1000);
         return;
     }
@@ -97,7 +100,7 @@ function changePage(url) {
         window.location.href = url;
         setTimeout(function () {
             $("#loadNewPageAnimation").removeClass("changePageDefault").parent().css("opacity", "0").css('transition', 'opacity 0s ease-in-out');
-        }, 500);
+        }, 1500);
     }, 1200);
 
 
